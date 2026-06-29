@@ -1,12 +1,12 @@
 from datetime import datetime
 
-class expense():
+class Expense:
     def __init__(self, amount, category, desc, date = None):
         self.amount = amount
         self.category = category
         self.desc = desc
 
-        if(date == None):
+        if date is None:
             self.date = datetime.now().strftime("%Y-%m-%d")
         else:
             self.date = date
@@ -19,7 +19,8 @@ class expense():
             "desc" : self.desc,
             "date" : self.date
         }           
-
+    
+    @classmethod
     def from_dict(cls, data):
         """Create a Expense object from dictionary."""
         return cls(
@@ -33,6 +34,6 @@ class expense():
         return(
             f"Date: {self.date}\n"
             f"Category: {self.category}\n"
-            f"Description: {self.description}\n"
+            f"Description: {self.desc}\n"
             f"Amount: {self.amount:.2f}\n"
         )
