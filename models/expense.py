@@ -1,10 +1,11 @@
+#expense.py
 from datetime import datetime
 
 class Expense:
-    def __init__(self, amount, category, desc, date = None):
+    def __init__(self, amount, category, description, date = None):
         self.amount = amount
         self.category = category
-        self.desc = desc
+        self.description = description
 
         if date is None:
             self.date = datetime.now().strftime("%Y-%m-%d")
@@ -16,7 +17,7 @@ class Expense:
         return{
             "amount" : self.amount,
             "category" : self.category,
-            "desc" : self.desc,
+            "description" : self.description,
             "date" : self.date
         }           
     
@@ -26,7 +27,7 @@ class Expense:
         return cls(
             amount = data["amount"],
             category = data["category"],
-            desc = data["desc"],
+            description = data["description"],
             date = data["date"],
         )
     
@@ -34,6 +35,6 @@ class Expense:
         return(
             f"Date: {self.date}\n"
             f"Category: {self.category}\n"
-            f"Description: {self.desc}\n"
+            f"Description: {self.description}\n"
             f"Amount: {self.amount:.2f}\n"
         )

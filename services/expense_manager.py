@@ -1,7 +1,8 @@
+#expense_manager.py
 from datetime import datetime
-from expense import Expense
+from models.expense import Expense
 
-class ExpenseManager():
+class ExpenseManager:
     def __init__(self):
         self.expenses = []
 
