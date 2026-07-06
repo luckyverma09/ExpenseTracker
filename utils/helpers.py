@@ -29,15 +29,15 @@ def get_valid_category():
             return category
         print("Please enter a valid category: food, shopping, travel, bills, other")
     
-def get_valid_month(month):
-    if(month > 12 or month < 1):
-        return False
-    else:
-        return True
+def get_valid_month():
+    while True:
+        month = input("Enter the Month : ")
+        try:
+            month = int(month)
+            if(month > 0 and month < 13):
+                return month
+        except ValueError:
+            print("Please Enter valid Month : ")
 
 def pause():
-    print("Press Enter to continue...")
-    user_input = input()
-    while(user_input==""):
-        return True
-    
+    input("Press Enter to continue...")
