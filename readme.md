@@ -164,9 +164,3 @@ Amount: 250.00
 ## 👨‍💻 Author
 
 Developed as a learning project to strengthen Python fundamentals, Object-Oriented Programming, modular programming, and file handling.
-
----
-
-## 📄 License
-
-This project is open-source and available for educational and personal use.
