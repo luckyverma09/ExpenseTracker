@@ -1,6 +1,7 @@
 import json
 from models.expense import Expense
 
+
 class FileManager:
     def save_to_file(self, expenses):
         data = []
@@ -10,8 +11,6 @@ class FileManager:
 
         with open("data/expenses.json", "w") as file:
             json.dump(data, file, indent=4)
-
-
 
     def load_from_file(self):
         try:

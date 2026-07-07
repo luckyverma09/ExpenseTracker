@@ -1,8 +1,7 @@
-#expense.py
 from datetime import datetime
 
 class Expense:
-    def __init__(self, amount, category, description, date = None):
+    def __init__(self, amount, category, description, date=None):
         self.amount = amount
         self.category = category
         self.description = description
@@ -12,27 +11,25 @@ class Expense:
         else:
             self.date = date
 
-
     def to_dict(self):
-        return{
-            "amount" : self.amount,
-            "category" : self.category,
-            "description" : self.description,
-            "date" : self.date
-        }           
-    
+        return {
+            "amount": self.amount,
+            "category": self.category,
+            "description": self.description,
+            "date": self.date,
+        }
+
     @classmethod
     def from_dict(cls, data):
-        """Create a Expense object from dictionary."""
         return cls(
-            amount = data["amount"],
-            category = data["category"],
-            description = data["description"],
-            date = data["date"],
+            amount=data["amount"],
+            category=data["category"],
+            description=data["description"],
+            date=data["date"],
         )
-    
+
     def __str__(self):
-        return(
+        return (
             f"Date: {self.date}\n"
             f"Category: {self.category}\n"
             f"Description: {self.description}\n"
